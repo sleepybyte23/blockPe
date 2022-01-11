@@ -21,7 +21,7 @@ function MenuItems() {
       <Menu.Item key="/quickstart">
         <NavLink to="/quickstart">🚀 Quick Start</NavLink>
       </Menu.Item>
-      <Menu.Item key="/wallet">
+      {/* <Menu.Item key="/wallet">
         <NavLink to="/wallet">👛 Wallet</NavLink>
       </Menu.Item>
       <Menu.Item key="/1inch">
@@ -41,7 +41,7 @@ function MenuItems() {
       </Menu.Item>
       <Menu.Item key="/contract">
         <NavLink to="/contract">📄 Contract</NavLink>
-      </Menu.Item>
+      </Menu.Item> */}
     </Menu>
   );
 }

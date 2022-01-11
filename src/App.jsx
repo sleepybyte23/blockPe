@@ -1,6 +1,11 @@
 import { useEffect } from "react";
 import { useMoralis } from "react-moralis";
-import { BrowserRouter as Router, Switch, Route, Redirect } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Redirect,
+} from "react-router-dom";
 import Account from "components/Account/Account";
 import Chains from "components/Chains";
 import TokenPrice from "components/TokenPrice";
@@ -8,6 +13,7 @@ import ERC20Balance from "components/ERC20Balance";
 import ERC20Transfers from "components/ERC20Transfers";
 import DEX from "components/DEX";
 import NFTBalance from "components/NFTBalance";
+import Restaurant from 'components/Restaurant'
 import Wallet from "components/Wallet";
 import { Layout, Tabs } from "antd";
 import "antd/dist/antd.css";
@@ -51,11 +57,14 @@ const styles = {
   },
 };
 const App = ({ isServerInfo }) => {
-  const { isWeb3Enabled, enableWeb3, isAuthenticated, isWeb3EnableLoading } = useMoralis();
+  const { isWeb3Enabled, enableWeb3, isAuthenticated, isWeb3EnableLoading } =
+    useMoralis();
 
   useEffect(() => {
     const connectorId = window.localStorage.getItem("connectorId");
-    if (isAuthenticated && !isWeb3Enabled && !isWeb3EnableLoading) enableWeb3({ provider: connectorId });
+    console.log("connectorId", connectorId);
+    if (isAuthenticated && !isWeb3Enabled && !isWeb3EnableLoading)
+      enableWeb3({ provider: connectorId });
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isAuthenticated, isWeb3Enabled]);
 
@@ -67,13 +76,13 @@ const App = ({ isServerInfo }) => {
           <MenuItems />
           <div style={styles.headerRight}>
             <Chains />
-            <TokenPrice
+            {/* <TokenPrice
               address="0x1f9840a85d5af5bf1d1762f925bdaddc4201f984"
               chain="eth"
               image="https://cloudflare-ipfs.com/ipfs/QmXttGpZrECX5qCyXbBQiqgQNytVGeZW5Anewvh2jc4psg/"
               size="40px"
-            />
-            <NativeBalance />
+            /> */}
+            {/* <NativeBalance /> */}
             <Account />
           </div>
         </Header>
@@ -114,9 +123,13 @@ const App = ({ isServerInfo }) => {
             <Route path="/contract">
               <Contract />
             </Route>
+            <Route path="/restaurant">
+              <Restaurant />
+            </Route>
             <Route path="/">
               <Redirect to="/quickstart" />
             </Route>
+            
             <Route path="/ethereum-boilerplate">
               <Redirect to="/quickstart" />
             </Route>
@@ -129,7 +142,11 @@ const App = ({ isServerInfo }) => {
       <Footer style={{ textAlign: "center" }}>
         <Text style={{ display: "block" }}>
           ⭐️ Please star this{" "}
-          <a href="https://github.com/ethereum-boilerplate/ethereum-boilerplate/" target="_blank" rel="noopener noreferrer">
+          <a
+            href="https://github.com/ethereum-boilerplate/ethereum-boilerplate/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             boilerplate
           </a>
           , every star makes us very happy!
@@ -137,7 +154,11 @@ const App = ({ isServerInfo }) => {
 
         <Text style={{ display: "block" }}>
           🙋 You have questions? Ask them on the {""}
-          <a target="_blank" rel="noopener noreferrer" href="https://forum.moralis.io/t/ethereum-boilerplate-questions/3951/29">
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://forum.moralis.io/t/ethereum-boilerplate-questions/3951/29"
+          >
             Moralis forum
           </a>
         </Text>
@@ -159,7 +180,13 @@ const App = ({ isServerInfo }) => {
 
 export const Logo = () => (
   <div style={{ display: "flex" }}>
-    <svg width="60" height="38" viewBox="0 0 50 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg
+      width="60"
+      height="38"
+      viewBox="0 0 50 38"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
       <path
         d="M43.6871 32.3986C43.5973 32.4884 43.53 32.5782 43.4402 32.6905C43.53 32.6007 43.5973 32.5109 43.6871 32.3986Z"
         fill="black"

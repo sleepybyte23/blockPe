@@ -1,1 +1,1770 @@
-{}
+{
+    "address": "0xCfE8BEc874f100381a9D335Dd3746AD43A09E5B0",
+    "abi": [
+      {
+        "inputs": [],
+        "stateMutability": "nonpayable",
+        "type": "constructor"
+      },
+      {
+        "anonymous": false,
+        "inputs": [
+          {
+            "indexed": false,
+            "internalType": "uint256",
+            "name": "orderId",
+            "type": "uint256"
+          },
+          {
+            "indexed": false,
+            "internalType": "address",
+            "name": "store",
+            "type": "address"
+          },
+          {
+            "indexed": false,
+            "internalType": "address",
+            "name": "user",
+            "type": "address"
+          },
+          {
+            "indexed": false,
+            "internalType": "uint256",
+            "name": "totalAmount",
+            "type": "uint256"
+          },
+          {
+            "indexed": false,
+            "internalType": "uint256",
+            "name": "storeAmount",
+            "type": "uint256"
+          },
+          {
+            "indexed": false,
+            "internalType": "uint256",
+            "name": "constomerAmount",
+            "type": "uint256"
+          },
+          {
+            "indexed": false,
+            "internalType": "uint256",
+            "name": "feeAmount",
+            "type": "uint256"
+          },
+          {
+            "indexed": false,
+            "internalType": "uint256",
+            "name": "tokenId",
+            "type": "uint256"
+          },
+          {
+            "indexed": false,
+            "internalType": "uint256",
+            "name": "timeLock",
+            "type": "uint256"
+          }
+        ],
+        "name": "OrderDetailsEvent",
+        "type": "event"
+      },
+      {
+        "anonymous": false,
+        "inputs": [
+          {
+            "indexed": true,
+            "internalType": "address",
+            "name": "previousOwner",
+            "type": "address"
+          },
+          {
+            "indexed": true,
+            "internalType": "address",
+            "name": "newOwner",
+            "type": "address"
+          }
+        ],
+        "name": "OwnershipTransferred",
+        "type": "event"
+      },
+      {
+        "anonymous": false,
+        "inputs": [
+          {
+            "indexed": false,
+            "internalType": "address",
+            "name": "account",
+            "type": "address"
+          }
+        ],
+        "name": "Paused",
+        "type": "event"
+      },
+      {
+        "anonymous": false,
+        "inputs": [
+          {
+            "indexed": false,
+            "internalType": "address",
+            "name": "account",
+            "type": "address"
+          }
+        ],
+        "name": "Unpaused",
+        "type": "event"
+      },
+      {
+        "anonymous": false,
+        "inputs": [
+          {
+            "indexed": false,
+            "internalType": "uint256",
+            "name": "cartId",
+            "type": "uint256"
+          },
+          {
+            "indexed": false,
+            "internalType": "uint256",
+            "name": "orderId",
+            "type": "uint256"
+          },
+          {
+            "indexed": false,
+            "internalType": "address",
+            "name": "store",
+            "type": "address"
+          },
+          {
+            "indexed": false,
+            "internalType": "address",
+            "name": "user",
+            "type": "address"
+          },
+          {
+            "indexed": false,
+            "internalType": "uint256[]",
+            "name": "ids",
+            "type": "uint256[]"
+          },
+          {
+            "indexed": false,
+            "internalType": "uint256[]",
+            "name": "idCount",
+            "type": "uint256[]"
+          },
+          {
+            "indexed": false,
+            "internalType": "uint256[]",
+            "name": "amount",
+            "type": "uint256[]"
+          },
+          {
+            "indexed": false,
+            "internalType": "uint256",
+            "name": "tokenId",
+            "type": "uint256"
+          }
+        ],
+        "name": "createOrderEvent",
+        "type": "event"
+      },
+      {
+        "anonymous": false,
+        "inputs": [
+          {
+            "indexed": false,
+            "internalType": "uint256",
+            "name": "currencySymbol",
+            "type": "uint256"
+          },
+          {
+            "indexed": false,
+            "internalType": "uint256",
+            "name": "rate",
+            "type": "uint256"
+          }
+        ],
+        "name": "currencyExchangeEvent",
+        "type": "event"
+      },
+      {
+        "anonymous": false,
+        "inputs": [
+          {
+            "indexed": false,
+            "internalType": "uint256",
+            "name": "orderId",
+            "type": "uint256"
+          },
+          {
+            "indexed": false,
+            "internalType": "uint256",
+            "name": "amount",
+            "type": "uint256"
+          },
+          {
+            "indexed": false,
+            "internalType": "uint256",
+            "name": "tip",
+            "type": "uint256"
+          },
+          {
+            "indexed": false,
+            "internalType": "address",
+            "name": "store",
+            "type": "address"
+          },
+          {
+            "indexed": false,
+            "internalType": "uint256",
+            "name": "tokenId",
+            "type": "uint256"
+          },
+          {
+            "indexed": false,
+            "internalType": "uint256",
+            "name": "feeTransfer",
+            "type": "uint256"
+          },
+          {
+            "indexed": false,
+            "internalType": "uint256",
+            "name": "orderBalanceTransfer",
+            "type": "uint256"
+          },
+          {
+            "indexed": false,
+            "internalType": "uint256",
+            "name": "currencyRate",
+            "type": "uint256"
+          }
+        ],
+        "name": "paymentSplitterEvent",
+        "type": "event"
+      },
+      {
+        "anonymous": false,
+        "inputs": [
+          {
+            "indexed": false,
+            "internalType": "uint256",
+            "name": "orderId",
+            "type": "uint256"
+          },
+          {
+            "indexed": false,
+            "internalType": "address",
+            "name": "store",
+            "type": "address"
+          },
+          {
+            "indexed": false,
+            "internalType": "address",
+            "name": "user",
+            "type": "address"
+          },
+          {
+            "indexed": false,
+            "internalType": "uint256",
+            "name": "orderTotal",
+            "type": "uint256"
+          }
+        ],
+        "name": "refundOrderEvent",
+        "type": "event"
+      },
+      {
+        "anonymous": false,
+        "inputs": [
+          {
+            "indexed": false,
+            "internalType": "address",
+            "name": "store",
+            "type": "address"
+          },
+          {
+            "indexed": false,
+            "internalType": "uint256",
+            "name": "pId",
+            "type": "uint256"
+          },
+          {
+            "indexed": false,
+            "internalType": "uint256",
+            "name": "price",
+            "type": "uint256"
+          },
+          {
+            "indexed": false,
+            "internalType": "uint256",
+            "name": "taxInPercentage",
+            "type": "uint256"
+          },
+          {
+            "indexed": false,
+            "internalType": "uint256",
+            "name": "priceIncludingTax",
+            "type": "uint256"
+          }
+        ],
+        "name": "setProductEvent",
+        "type": "event"
+      },
+      {
+        "anonymous": false,
+        "inputs": [
+          {
+            "indexed": false,
+            "internalType": "address",
+            "name": "settledBy",
+            "type": "address"
+          },
+          {
+            "indexed": false,
+            "internalType": "address",
+            "name": "settledAddress",
+            "type": "address"
+          },
+          {
+            "indexed": false,
+            "internalType": "uint256",
+            "name": "settleAmount",
+            "type": "uint256"
+          },
+          {
+            "indexed": false,
+            "internalType": "uint256",
+            "name": "settleStart",
+            "type": "uint256"
+          },
+          {
+            "indexed": false,
+            "internalType": "uint256",
+            "name": "settleEnd",
+            "type": "uint256"
+          }
+        ],
+        "name": "settleOrderEvent",
+        "type": "event"
+      },
+      {
+        "anonymous": false,
+        "inputs": [
+          {
+            "indexed": false,
+            "internalType": "address",
+            "name": "store",
+            "type": "address"
+          },
+          {
+            "indexed": false,
+            "internalType": "bool",
+            "name": "storeExist",
+            "type": "bool"
+          }
+        ],
+        "name": "storeEvent",
+        "type": "event"
+      },
+      {
+        "anonymous": false,
+        "inputs": [
+          {
+            "indexed": false,
+            "internalType": "address",
+            "name": "store",
+            "type": "address"
+          },
+          {
+            "indexed": false,
+            "internalType": "string",
+            "name": "url",
+            "type": "string"
+          },
+          {
+            "indexed": false,
+            "internalType": "uint256",
+            "name": "currency",
+            "type": "uint256"
+          },
+          {
+            "indexed": false,
+            "internalType": "address",
+            "name": "storePayableAddr",
+            "type": "address"
+          },
+          {
+            "indexed": false,
+            "internalType": "uint256",
+            "name": "minOrderAmount",
+            "type": "uint256"
+          },
+          {
+            "indexed": false,
+            "internalType": "uint256",
+            "name": "cbPercentage",
+            "type": "uint256"
+          },
+          {
+            "indexed": false,
+            "internalType": "uint256",
+            "name": "minCbOrderAmount",
+            "type": "uint256"
+          },
+          {
+            "indexed": false,
+            "internalType": "uint256",
+            "name": "maxCbOrderAmount",
+            "type": "uint256"
+          },
+          {
+            "indexed": false,
+            "internalType": "bool",
+            "name": "hasTaxRebate",
+            "type": "bool"
+          },
+          {
+            "indexed": false,
+            "internalType": "bool",
+            "name": "isStoreActive",
+            "type": "bool"
+          }
+        ],
+        "name": "storeInfoEvent",
+        "type": "event"
+      },
+      {
+        "anonymous": false,
+        "inputs": [
+          {
+            "indexed": false,
+            "internalType": "address",
+            "name": "store",
+            "type": "address"
+          },
+          {
+            "indexed": false,
+            "internalType": "bool",
+            "name": "isStoreActive",
+            "type": "bool"
+          }
+        ],
+        "name": "storeStatusEvent",
+        "type": "event"
+      },
+      {
+        "anonymous": false,
+        "inputs": [
+          {
+            "indexed": false,
+            "internalType": "address",
+            "name": "store",
+            "type": "address"
+          },
+          {
+            "indexed": false,
+            "internalType": "uint256",
+            "name": "taxCode",
+            "type": "uint256"
+          },
+          {
+            "indexed": false,
+            "internalType": "uint256",
+            "name": "maxAmount",
+            "type": "uint256"
+          },
+          {
+            "indexed": false,
+            "internalType": "uint256",
+            "name": "taxPercentage",
+            "type": "uint256"
+          }
+        ],
+        "name": "taxRebateEvent",
+        "type": "event"
+      },
+      {
+        "inputs": [
+          {
+            "internalType": "address",
+            "name": "_storeAddress",
+            "type": "address"
+          }
+        ],
+        "name": "addStore",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+      },
+      {
+        "inputs": [
+          {
+            "internalType": "address",
+            "name": "",
+            "type": "address"
+          },
+          {
+            "internalType": "uint256",
+            "name": "",
+            "type": "uint256"
+          }
+        ],
+        "name": "addressPaymentTracker",
+        "outputs": [
+          {
+            "internalType": "uint256",
+            "name": "start",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "end",
+            "type": "uint256"
+          }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+      },
+      {
+        "inputs": [
+          {
+            "internalType": "address",
+            "name": "",
+            "type": "address"
+          }
+        ],
+        "name": "authOwner",
+        "outputs": [
+          {
+            "internalType": "bool",
+            "name": "",
+            "type": "bool"
+          }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+      },
+      {
+        "inputs": [
+          {
+            "internalType": "address",
+            "name": "",
+            "type": "address"
+          }
+        ],
+        "name": "blacklistedUser",
+        "outputs": [
+          {
+            "internalType": "bool",
+            "name": "",
+            "type": "bool"
+          }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+      },
+      {
+        "inputs": [],
+        "name": "bulkLimit",
+        "outputs": [
+          {
+            "internalType": "uint256",
+            "name": "",
+            "type": "uint256"
+          }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+      },
+      {
+        "inputs": [
+          {
+            "internalType": "uint256",
+            "name": "_amount",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "_percentage",
+            "type": "uint256"
+          }
+        ],
+        "name": "calculateTotalWithTax",
+        "outputs": [
+          {
+            "internalType": "uint256",
+            "name": "",
+            "type": "uint256"
+          }
+        ],
+        "stateMutability": "pure",
+        "type": "function"
+      },
+      {
+        "inputs": [
+          {
+            "internalType": "uint256",
+            "name": "_tokenId",
+            "type": "uint256"
+          }
+        ],
+        "name": "claimFee",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+      },
+      {
+        "inputs": [
+          {
+            "internalType": "uint256",
+            "name": "cartId",
+            "type": "uint256"
+          },
+          {
+            "internalType": "address",
+            "name": "_store",
+            "type": "address"
+          },
+          {
+            "internalType": "uint256[]",
+            "name": "_ids",
+            "type": "uint256[]"
+          },
+          {
+            "internalType": "uint256[]",
+            "name": "_idCount",
+            "type": "uint256[]"
+          },
+          {
+            "internalType": "uint256[]",
+            "name": "_amount",
+            "type": "uint256[]"
+          },
+          {
+            "internalType": "uint256",
+            "name": "_tokenId",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "rebateCode",
+            "type": "uint256"
+          }
+        ],
+        "name": "createOrder",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+      },
+      {
+        "inputs": [
+          {
+            "internalType": "uint256",
+            "name": "",
+            "type": "uint256"
+          }
+        ],
+        "name": "currencyExchange",
+        "outputs": [
+          {
+            "internalType": "uint256",
+            "name": "",
+            "type": "uint256"
+          }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+      },
+      {
+        "inputs": [],
+        "name": "feePercentage",
+        "outputs": [
+          {
+            "internalType": "uint256",
+            "name": "",
+            "type": "uint256"
+          }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+      },
+      {
+        "inputs": [
+          {
+            "internalType": "uint256[]",
+            "name": "_arr",
+            "type": "uint256[]"
+          }
+        ],
+        "name": "getArrLength",
+        "outputs": [
+          {
+            "internalType": "uint256",
+            "name": "count",
+            "type": "uint256"
+          }
+        ],
+        "stateMutability": "pure",
+        "type": "function"
+      },
+      {
+        "inputs": [
+          {
+            "internalType": "uint256",
+            "name": "_tokenId",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "_customCount",
+            "type": "uint256"
+          }
+        ],
+        "name": "getClaimLength",
+        "outputs": [
+          {
+            "internalType": "uint256",
+            "name": "",
+            "type": "uint256"
+          }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+      },
+      {
+        "inputs": [
+          {
+            "internalType": "uint256",
+            "name": "_currencySymbol",
+            "type": "uint256"
+          }
+        ],
+        "name": "getCurrency",
+        "outputs": [
+          {
+            "internalType": "uint256",
+            "name": "",
+            "type": "uint256"
+          }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+      },
+      {
+        "inputs": [
+          {
+            "components": [
+              {
+                "internalType": "string",
+                "name": "url",
+                "type": "string"
+              },
+              {
+                "internalType": "uint256",
+                "name": "currency",
+                "type": "uint256"
+              },
+              {
+                "internalType": "address",
+                "name": "storePayableAddr",
+                "type": "address"
+              },
+              {
+                "internalType": "uint256",
+                "name": "minOrderAmount",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "cbPercentage",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "minCbOrderAmount",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "maxCbOrderAmount",
+                "type": "uint256"
+              },
+              {
+                "internalType": "bool",
+                "name": "hasTaxRebate",
+                "type": "bool"
+              },
+              {
+                "internalType": "bool",
+                "name": "isStoreActive",
+                "type": "bool"
+              }
+            ],
+            "internalType": "struct ProjectPurple.StoreInfo",
+            "name": "_storeInfo",
+            "type": "tuple"
+          },
+          {
+            "internalType": "uint256",
+            "name": "_totalAmount",
+            "type": "uint256"
+          }
+        ],
+        "name": "getMaxCashbackAmount",
+        "outputs": [
+          {
+            "internalType": "uint256",
+            "name": "",
+            "type": "uint256"
+          }
+        ],
+        "stateMutability": "pure",
+        "type": "function"
+      },
+      {
+        "inputs": [],
+        "name": "getMyTotalClaim",
+        "outputs": [
+          {
+            "internalType": "uint256",
+            "name": "",
+            "type": "uint256"
+          }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+      },
+      {
+        "inputs": [
+          {
+            "internalType": "uint256",
+            "name": "_orderid",
+            "type": "uint256"
+          }
+        ],
+        "name": "getOrder",
+        "outputs": [
+          {
+            "components": [
+              {
+                "internalType": "uint256",
+                "name": "orderId",
+                "type": "uint256"
+              },
+              {
+                "internalType": "address",
+                "name": "store",
+                "type": "address"
+              },
+              {
+                "internalType": "address",
+                "name": "user",
+                "type": "address"
+              },
+              {
+                "internalType": "uint256[]",
+                "name": "amount",
+                "type": "uint256[]"
+              },
+              {
+                "internalType": "uint256[3]",
+                "name": "amountSettle",
+                "type": "uint256[3]"
+              },
+              {
+                "internalType": "uint256",
+                "name": "tokenId",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "settleAfter",
+                "type": "uint256"
+              }
+            ],
+            "internalType": "struct ProjectPurple.Order",
+            "name": "",
+            "type": "tuple"
+          }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+      },
+      {
+        "inputs": [
+          {
+            "internalType": "address",
+            "name": "_storeAddress",
+            "type": "address"
+          },
+          {
+            "internalType": "uint256[]",
+            "name": "_ids",
+            "type": "uint256[]"
+          },
+          {
+            "internalType": "uint256[]",
+            "name": "_idCount",
+            "type": "uint256[]"
+          },
+          {
+            "internalType": "bool",
+            "name": "_includingTax",
+            "type": "bool"
+          },
+          {
+            "internalType": "uint256",
+            "name": "_currencyRate",
+            "type": "uint256"
+          }
+        ],
+        "name": "getOrderPrice",
+        "outputs": [
+          {
+            "internalType": "uint256",
+            "name": "",
+            "type": "uint256"
+          }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+      },
+      {
+        "inputs": [
+          {
+            "internalType": "address",
+            "name": "_storeAddress",
+            "type": "address"
+          },
+          {
+            "internalType": "uint256",
+            "name": "_pId",
+            "type": "uint256"
+          },
+          {
+            "internalType": "bool",
+            "name": "_includingTax",
+            "type": "bool"
+          }
+        ],
+        "name": "getProductPrice",
+        "outputs": [
+          {
+            "internalType": "uint256",
+            "name": "",
+            "type": "uint256"
+          }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+      },
+      {
+        "inputs": [
+          {
+            "internalType": "address",
+            "name": "_storeAddress",
+            "type": "address"
+          }
+        ],
+        "name": "getStoreInfo",
+        "outputs": [
+          {
+            "components": [
+              {
+                "internalType": "string",
+                "name": "url",
+                "type": "string"
+              },
+              {
+                "internalType": "uint256",
+                "name": "currency",
+                "type": "uint256"
+              },
+              {
+                "internalType": "address",
+                "name": "storePayableAddr",
+                "type": "address"
+              },
+              {
+                "internalType": "uint256",
+                "name": "minOrderAmount",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "cbPercentage",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "minCbOrderAmount",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "maxCbOrderAmount",
+                "type": "uint256"
+              },
+              {
+                "internalType": "bool",
+                "name": "hasTaxRebate",
+                "type": "bool"
+              },
+              {
+                "internalType": "bool",
+                "name": "isStoreActive",
+                "type": "bool"
+              }
+            ],
+            "internalType": "struct ProjectPurple.StoreInfo",
+            "name": "",
+            "type": "tuple"
+          }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+      },
+      {
+        "inputs": [
+          {
+            "internalType": "address",
+            "name": "_storeAddress",
+            "type": "address"
+          },
+          {
+            "internalType": "uint256",
+            "name": "_taxCode",
+            "type": "uint256"
+          }
+        ],
+        "name": "getTaxRebate",
+        "outputs": [
+          {
+            "components": [
+              {
+                "internalType": "uint256",
+                "name": "maxAmount",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "taxPercentage",
+                "type": "uint256"
+              }
+            ],
+            "internalType": "struct ProjectPurple.rebateAmount",
+            "name": "",
+            "type": "tuple"
+          }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+      },
+      {
+        "inputs": [
+          {
+            "internalType": "uint256",
+            "name": "_orderid",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "_orderAmount",
+            "type": "uint256"
+          }
+        ],
+        "name": "issueOrderRefund",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+      },
+      {
+        "inputs": [],
+        "name": "maxSettleLength",
+        "outputs": [
+          {
+            "internalType": "uint256",
+            "name": "",
+            "type": "uint256"
+          }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+      },
+      {
+        "inputs": [
+          {
+            "internalType": "uint256",
+            "name": "_tokenId",
+            "type": "uint256"
+          }
+        ],
+        "name": "orderClaimCount",
+        "outputs": [
+          {
+            "internalType": "uint256",
+            "name": "",
+            "type": "uint256"
+          }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+      },
+      {
+        "inputs": [],
+        "name": "owner",
+        "outputs": [
+          {
+            "internalType": "address",
+            "name": "",
+            "type": "address"
+          }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+      },
+      {
+        "inputs": [],
+        "name": "pause",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+      },
+      {
+        "inputs": [],
+        "name": "paused",
+        "outputs": [
+          {
+            "internalType": "bool",
+            "name": "",
+            "type": "bool"
+          }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+      },
+      {
+        "inputs": [
+          {
+            "internalType": "address",
+            "name": "",
+            "type": "address"
+          },
+          {
+            "internalType": "uint256",
+            "name": "",
+            "type": "uint256"
+          }
+        ],
+        "name": "products",
+        "outputs": [
+          {
+            "internalType": "uint256",
+            "name": "price",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "taxPercentage",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "priceIncludingTax",
+            "type": "uint256"
+          }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+      },
+      {
+        "inputs": [
+          {
+            "internalType": "address",
+            "name": "_address",
+            "type": "address"
+          }
+        ],
+        "name": "removeAuthOwner",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+      },
+      {
+        "inputs": [
+          {
+            "internalType": "address",
+            "name": "_storeAddress",
+            "type": "address"
+          }
+        ],
+        "name": "removeStore",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+      },
+      {
+        "inputs": [],
+        "name": "renounceOwnership",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+      },
+      {
+        "inputs": [
+          {
+            "internalType": "address",
+            "name": "_address",
+            "type": "address"
+          }
+        ],
+        "name": "setAuthOwner",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+      },
+      {
+        "inputs": [
+          {
+            "internalType": "address",
+            "name": "_address",
+            "type": "address"
+          }
+        ],
+        "name": "setBlacklistedUser",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+      },
+      {
+        "inputs": [
+          {
+            "internalType": "uint256",
+            "name": "_bulkLimit",
+            "type": "uint256"
+          }
+        ],
+        "name": "setBulkLimit",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+      },
+      {
+        "inputs": [
+          {
+            "internalType": "uint256",
+            "name": "_currencySymbol",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "_rate",
+            "type": "uint256"
+          }
+        ],
+        "name": "setCurrency",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+      },
+      {
+        "inputs": [
+          {
+            "internalType": "uint256[]",
+            "name": "_currencySymbol",
+            "type": "uint256[]"
+          },
+          {
+            "internalType": "uint256[]",
+            "name": "_rate",
+            "type": "uint256[]"
+          }
+        ],
+        "name": "setCurrencyBulk",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+      },
+      {
+        "inputs": [
+          {
+            "internalType": "uint256",
+            "name": "_feePercentage",
+            "type": "uint256"
+          }
+        ],
+        "name": "setFeePercentage",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+      },
+      {
+        "inputs": [
+          {
+            "internalType": "bool",
+            "name": "_isStoreActive",
+            "type": "bool"
+          }
+        ],
+        "name": "setIsStoreActive",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+      },
+      {
+        "inputs": [
+          {
+            "internalType": "uint256",
+            "name": "_maxSettleLength",
+            "type": "uint256"
+          }
+        ],
+        "name": "setMaxSettleLength",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+      },
+      {
+        "inputs": [
+          {
+            "internalType": "address",
+            "name": "_storeAddress",
+            "type": "address"
+          },
+          {
+            "internalType": "uint256",
+            "name": "_pId",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "_price",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "_taxPercentage",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "_priceIncludingTax",
+            "type": "uint256"
+          }
+        ],
+        "name": "setProduct",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+      },
+      {
+        "inputs": [
+          {
+            "internalType": "address",
+            "name": "_storeAddress",
+            "type": "address"
+          },
+          {
+            "internalType": "uint256[]",
+            "name": "_pId",
+            "type": "uint256[]"
+          },
+          {
+            "internalType": "uint256[]",
+            "name": "_price",
+            "type": "uint256[]"
+          },
+          {
+            "internalType": "uint256[]",
+            "name": "_taxInPercentage",
+            "type": "uint256[]"
+          },
+          {
+            "internalType": "uint256[]",
+            "name": "_priceIncludingTax",
+            "type": "uint256[]"
+          }
+        ],
+        "name": "setProductBulk",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+      },
+      {
+        "inputs": [
+          {
+            "internalType": "address",
+            "name": "_storeAddress",
+            "type": "address"
+          },
+          {
+            "internalType": "string",
+            "name": "_url",
+            "type": "string"
+          },
+          {
+            "internalType": "uint256",
+            "name": "_currency",
+            "type": "uint256"
+          },
+          {
+            "internalType": "address",
+            "name": "_storePayableAddr",
+            "type": "address"
+          },
+          {
+            "internalType": "uint256",
+            "name": "_minOrderAmount",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "_cbPercentage",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "_minCbOrderAmount",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "_maxCbOrderAmount",
+            "type": "uint256"
+          },
+          {
+            "internalType": "bool",
+            "name": "_hasTaxRebate",
+            "type": "bool"
+          },
+          {
+            "internalType": "bool",
+            "name": "_isStoreActive",
+            "type": "bool"
+          }
+        ],
+        "name": "setStoreInfo",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+      },
+      {
+        "inputs": [
+          {
+            "internalType": "address",
+            "name": "_storeAddress",
+            "type": "address"
+          },
+          {
+            "internalType": "uint256",
+            "name": "_taxCode",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "_maxAmount",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "_taxPercentage",
+            "type": "uint256"
+          }
+        ],
+        "name": "setTaxRebate",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+      },
+      {
+        "inputs": [
+          {
+            "internalType": "uint256",
+            "name": "_timeLock",
+            "type": "uint256"
+          }
+        ],
+        "name": "setTimeLock",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+      },
+      {
+        "inputs": [
+          {
+            "internalType": "uint256",
+            "name": "_tokenId",
+            "type": "uint256"
+          },
+          {
+            "internalType": "address",
+            "name": "_tokenAddress",
+            "type": "address"
+          }
+        ],
+        "name": "setTokenList",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+      },
+      {
+        "inputs": [
+          {
+            "internalType": "address",
+            "name": "_vault",
+            "type": "address"
+          }
+        ],
+        "name": "setVault",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+      },
+      {
+        "inputs": [
+          {
+            "internalType": "uint256",
+            "name": "_tokenId",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "_customCount",
+            "type": "uint256"
+          }
+        ],
+        "name": "settleAllOrder",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+      },
+      {
+        "inputs": [
+          {
+            "internalType": "address",
+            "name": "",
+            "type": "address"
+          }
+        ],
+        "name": "store",
+        "outputs": [
+          {
+            "internalType": "bool",
+            "name": "",
+            "type": "bool"
+          }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+      },
+      {
+        "inputs": [
+          {
+            "internalType": "address",
+            "name": "",
+            "type": "address"
+          }
+        ],
+        "name": "stores",
+        "outputs": [
+          {
+            "internalType": "string",
+            "name": "url",
+            "type": "string"
+          },
+          {
+            "internalType": "uint256",
+            "name": "currency",
+            "type": "uint256"
+          },
+          {
+            "internalType": "address",
+            "name": "storePayableAddr",
+            "type": "address"
+          },
+          {
+            "internalType": "uint256",
+            "name": "minOrderAmount",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "cbPercentage",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "minCbOrderAmount",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "maxCbOrderAmount",
+            "type": "uint256"
+          },
+          {
+            "internalType": "bool",
+            "name": "hasTaxRebate",
+            "type": "bool"
+          },
+          {
+            "internalType": "bool",
+            "name": "isStoreActive",
+            "type": "bool"
+          }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+      },
+      {
+        "inputs": [
+          {
+            "internalType": "address",
+            "name": "",
+            "type": "address"
+          },
+          {
+            "internalType": "uint256",
+            "name": "",
+            "type": "uint256"
+          }
+        ],
+        "name": "taxRebate",
+        "outputs": [
+          {
+            "internalType": "uint256",
+            "name": "maxAmount",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "taxPercentage",
+            "type": "uint256"
+          }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+      },
+      {
+        "inputs": [],
+        "name": "timeLock",
+        "outputs": [
+          {
+            "internalType": "uint256",
+            "name": "",
+            "type": "uint256"
+          }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+      },
+      {
+        "inputs": [
+          {
+            "internalType": "uint256",
+            "name": "",
+            "type": "uint256"
+          }
+        ],
+        "name": "tokenList",
+        "outputs": [
+          {
+            "internalType": "address",
+            "name": "",
+            "type": "address"
+          }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+      },
+      {
+        "inputs": [
+          {
+            "internalType": "address",
+            "name": "",
+            "type": "address"
+          }
+        ],
+        "name": "totalClaimed",
+        "outputs": [
+          {
+            "internalType": "uint256",
+            "name": "",
+            "type": "uint256"
+          }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+      },
+      {
+        "inputs": [
+          {
+            "internalType": "uint256",
+            "name": "",
+            "type": "uint256"
+          }
+        ],
+        "name": "totalFeeClaimed",
+        "outputs": [
+          {
+            "internalType": "uint256",
+            "name": "",
+            "type": "uint256"
+          }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+      },
+      {
+        "inputs": [
+          {
+            "internalType": "uint256",
+            "name": "",
+            "type": "uint256"
+          }
+        ],
+        "name": "totalFeeTobeClaimed",
+        "outputs": [
+          {
+            "internalType": "uint256",
+            "name": "",
+            "type": "uint256"
+          }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+      },
+      {
+        "inputs": [
+          {
+            "internalType": "address",
+            "name": "newOwner",
+            "type": "address"
+          }
+        ],
+        "name": "transferOwnership",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+      },
+      {
+        "inputs": [],
+        "name": "unpause",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+      },
+      {
+        "inputs": [],
+        "name": "vault",
+        "outputs": [
+          {
+            "internalType": "address",
+            "name": "",
+            "type": "address"
+          }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+      }
+    ]
+  }

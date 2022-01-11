@@ -5,6 +5,7 @@ import { MoralisProvider } from "react-moralis";
 import "./index.css";
 import * as serviceWorkerRegistration from "./serviceWorkerRegistration";
 import QuickStart from "components/QuickStart";
+import { ChakraProvider } from "@chakra-ui/react";
 
 /** Get your free Moralis Account https://moralis.io/ */
 
@@ -20,9 +21,11 @@ const Application = () => {
     );
   if (isServerInfo)
     return (
-      <MoralisProvider appId={APP_ID} serverUrl={SERVER_URL}>
-        <App isServerInfo />
-      </MoralisProvider>
+      <ChakraProvider>
+        <MoralisProvider appId={APP_ID} serverUrl={SERVER_URL}>
+          <App isServerInfo />
+        </MoralisProvider>
+      </ChakraProvider>
     );
   else {
     return (
